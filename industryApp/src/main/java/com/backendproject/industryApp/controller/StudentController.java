@@ -14,6 +14,7 @@ public class StudentController {
     private StudentService studentService;
 
     @PostMapping("/addStudents")
+    @CrossOrigin(origins = "http://localhost:3000")
     public Students addStudents(@RequestBody Students students){
         return studentService.addStudent(students);
 
@@ -23,13 +24,22 @@ public class StudentController {
 
 
     @GetMapping("/getStudents")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Students> getAllStudents(){
         return studentService.getAllStudents();
 
     }
 
     @PostMapping("/updateStudents")
+    @CrossOrigin(origins = "http://localhost:3000")
     public Students updateStudents(@RequestBody Students students){
         return studentService.updateStudents(students);
+    }
+
+
+    @GetMapping("/deleteStudent/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public  Boolean deleteStudent(@PathVariable int id){
+        return studentService.deleteStudent(id);
     }
 }

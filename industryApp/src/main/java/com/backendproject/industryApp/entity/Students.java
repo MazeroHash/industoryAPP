@@ -22,7 +22,7 @@ public class Students {
         this.dept = dept;
     }
 
-    public static int getId() {
+    public  int getId() {
         return id;
     }
 
